@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2002-2020 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Neo4j Sweden AB [https://neo4j.com]
  *
  * This file is part of Neo4j.
  *
@@ -15,7 +15,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 import React from 'react'
@@ -78,7 +78,7 @@ const slides = [
       <h4>Load records</h4>
       <figure>
         <pre className="pre-scrollable code runnable">
-          {`LOAD CSV WITH HEADERS FROM "http://data.neo4j.com/northwind/products.csv" AS row
+          {`LOAD CSV WITH HEADERS FROM "https://data.neo4j.com/northwind/products.csv" AS row
 CREATE (n:Product)
 SET n = row,
 n.unitPrice = toFloat(row.unitPrice),
@@ -88,14 +88,14 @@ n.reorderLevel = toInteger(row.reorderLevel), n.discontinued = (row.discontinued
       </figure>
       <figure>
         <pre className="pre-scrollable code runnable">
-          {`LOAD CSV WITH HEADERS FROM "http://data.neo4j.com/northwind/categories.csv" AS row
+          {`LOAD CSV WITH HEADERS FROM "https://data.neo4j.com/northwind/categories.csv" AS row
 CREATE (n:Category)
 SET n = row`}
         </pre>
       </figure>
       <figure>
         <pre className="pre-scrollable code runnable">
-          {`LOAD CSV WITH HEADERS FROM "http://data.neo4j.com/northwind/suppliers.csv" AS row
+          {`LOAD CSV WITH HEADERS FROM "https://data.neo4j.com/northwind/suppliers.csv" AS row
 CREATE (n:Supplier)
 SET n = row`}
         </pre>
@@ -155,7 +155,7 @@ CREATE (p)-[:PART_OF]->(c)`}
           <a
             target="_blank"
             rel="noreferrer"
-            href="http://neo4j.com/developer/guide-importing-data-and-etl"
+            href="https://neo4j.com/developer/guide-importing-data-and-etl"
           >
             {' '}
             importing guide
@@ -232,14 +232,14 @@ RETURN DISTINCT s.companyName as ProduceSuppliers`}
       <h4>Load and index records</h4>
       <figure>
         <pre className="pre-scrollable code runnable">
-          {`LOAD CSV WITH HEADERS FROM "http://data.neo4j.com/northwind/customers.csv" AS row
+          {`LOAD CSV WITH HEADERS FROM "https://data.neo4j.com/northwind/customers.csv" AS row
 CREATE (n:Customer)
 SET n = row`}
         </pre>
       </figure>
       <figure>
         <pre className="pre-scrollable code runnable">
-          {`LOAD CSV WITH HEADERS FROM "http://data.neo4j.com/northwind/orders.csv" AS row
+          {`LOAD CSV WITH HEADERS FROM "https://data.neo4j.com/northwind/orders.csv" AS row
 CREATE (n:Order)
 SET n = row`}
         </pre>
@@ -295,7 +295,7 @@ CREATE (c)-[:PURCHASED]->(o)`}
       <h4>Load and index records</h4>
       <figure>
         <pre className="pre-scrollable code runnable">
-          {`LOAD CSV WITH HEADERS FROM "http://data.neo4j.com/northwind/order-details.csv" AS row
+          {`LOAD CSV WITH HEADERS FROM "https://data.neo4j.com/northwind/order-details.csv" AS row
 MATCH (p:Product), (o:Order)
 WHERE p.productID = row.productID AND o.orderID = row.orderID
 CREATE (o)-[details:ORDERS]->(p)
